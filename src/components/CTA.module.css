@@ -79,6 +79,13 @@
   padding: 14px 16px;
   outline: none;
   transition: border-color 0.2s ease, background 0.2s ease;
+  color-scheme: dark;
+}
+
+.field select option {
+  background: #1a1a1a;
+  color: #ededed;
+  padding: 12px;
 }
 
 .field textarea {
