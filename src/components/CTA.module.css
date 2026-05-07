@@ -128,7 +128,9 @@
 
 .button {
   align-self: flex-start;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-size: 16px;
   font-weight: 600;
   font-family: var(--font-display);
@@ -142,10 +144,47 @@
   transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
-.button:hover {
+.button:hover:not(:disabled) {
   background: transparent;
   color: var(--text);
   transform: translateY(-2px);
+}
+
+.button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.errorBox {
+  background: rgba(255, 90, 61, 0.08);
+  border: 1px solid rgba(255, 90, 61, 0.4);
+  color: var(--accent);
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-size: 14px;
 }
 
 .email {
